@@ -40,7 +40,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:8080",
-  "https://ca-successful.vercel.app",
+  "https://ca-successful-psi.vercel.app",
   process.env.FRONTEND_URL, // render env
 ].filter(Boolean).map(o => o.replace(/\/$/, ''));
 
@@ -50,7 +50,7 @@ if (process.env.APPWRITE_ENDPOINT) {
   allowedOrigins.push(appwriteUrl.origin);
   // Also allow localhost appwrite for development
   allowedOrigins.push("http://appwrite");
-  allowedOrigins.push("http://localhost:80");
+  allowedOrigins.push("http://localhost:8080");
 }
 
 app.use(cors({
